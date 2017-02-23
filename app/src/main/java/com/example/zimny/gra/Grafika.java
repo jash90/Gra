@@ -72,9 +72,11 @@ public class Grafika extends View  implements View.OnTouchListener {
             }
          this.invalidate();
         }
-        if (checkremis(lista))
+        else if (checkremis(lista))
         {
             Toast.makeText(getContext(),"Remis",Toast.LENGTH_SHORT).show();
+            for(int i=0;i<lista.length;i++)
+                lista[i]=null;
             this.invalidate();
         }
 
