@@ -72,6 +72,11 @@ public class Grafika extends View  implements View.OnTouchListener {
             }
          this.invalidate();
         }
+        if (checkremis(lista))
+        {
+            Toast.makeText(getContext(),"Remis",Toast.LENGTH_SHORT).show();
+            this.invalidate();
+        }
 
     }
 
@@ -297,6 +302,17 @@ public class Grafika extends View  implements View.OnTouchListener {
         }
 
         return null;
+    }
+    public Boolean checkremis(String[] lista)
+    {
+        for (String s : lista)
+        {
+            if (s==null)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
 }
